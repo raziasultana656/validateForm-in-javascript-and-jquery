@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Creation!</title>
+
+<link rel="stylesheet" href="student.css">
+<script  src="student.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<form class="form"  name="form" id="frm">
+		<fieldset align="center"><legend>Form with Validation</legend>
+
+        <label>First  Name:</label><input type="text" class="fname" name="firstname" id="txtFname" 
+                                    placeholder="First Name" autofocus="on" > 
+                                 
+        <label>Last  Name:</label><input type="text" class="lname" name="lastname" id="txtLname"
+                                    placeholder="Last Name"> 
+         <label>Email:</label><input type="Email" class="email" name="email" id="txtEmail"
+                                    placeholder="Email "> 
+        <label>Phone:</label><input type="Phone" class="phone" name="phone" id="txtPhone"
+                                     placeholder="Phone" pattern="[0-9]{10}"> 
+         <label>DOB</label>
+                    <select class="month" id="input_month" onchange="month_function()">
+                        
+                        <option value="0" disabled selected>Month</option>
+                        <option>JAN</option>
+                        <option>FEB</option>
+                        <option>MAR</option>
+                        <option>APR</option>
+                        <option>MAY</option>
+                        <option>JUN</option>
+                        <option>JULY</option>
+                        <option>AUG</option>
+                        <option>SEP</option>
+                        <option>OCT</option>
+                        <option>NOV</option>
+                        <option>DEC</option>
+
+                    </select>
+                     
+                    <select class="day" id="output_day" onchange="random_function1()">
+                        <option value="0" disabled selected>day</option>
+                             
+                    </select>
+
+                    </select>
+                    <select class="year" id="year" onchange="month_function()">
+                        <option value="0" disabled selected>year</option>
+                        <option>1900</option>
+                        <option>1996</option>
+                        <option>1997</option>
+                        <option>1998</option>
+                        <option>1999</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2003</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+
+                    </select>
+		<label>Country:</label>
+				<select class="country" id="input" onchange="country_function(this.value)">
+                    <option value="0" disabled selected>Choose Country</option>
+                    <option>INDIA</option>
+                    <option>US</option>
+						 
+                </select>
+        <label>State:</label>
+				 
+                   
+                    <select class="state" id="output">
+                    <option value="" disabled selected>Choose State</option>
+						 
+                </select>
+                <br>
+        <label>Gender </label>
+                    <input type="radio" name="gender" value="male" id="rdbMale" checked> Male
+                    <input type="radio" name="gender" value="female" id="rdbFemale"> Female
+                    <input type="radio" name="gender" value="other" id="rdbOther"> Other  
+                    <br>
+        <label>Hobbies : </label><br>
+                        <input type="checkbox" name="reading" value="Reading" id="chkReading"> Reading
+                         <input type="checkbox" name="listening" value="Listening" id="chkListening"> Listening
+                        
+                        <input type="checkbox" name="Other" value="Other" id="chkOther">  Other
+                    <br>
+        <label>Education:</label>
+				<select class="education" id="max_edu" placeholder="Highest Education">
+                    <option value="0" disabled selected>Highest Education</option>
+						<option>MCA</option>
+						<option>B.Tech</option>
+						 
+                </select>
+                        
+        <hr>
+		<div class="button"> 
+			<div >
+                <button class="reset" type="reset" name="reset" value="" id="btnReset">RESET</button>
+			<button class="submit" type="button" name="submit" value="" onclick="data_upload()" id="btnSubmit">SUBMIT</button>
+			<button id="btnShow" >Show on diff tab</button>
+			 
+		</div>
+	</div>
+	<hr>
+	</fieldset>
+	
+	
+	</form>
+	<div>
+         
+      
+        <p id="demo"></p>
+         
+	</div>
+	<script>
+        $(document).ready(function(){
+            $("#btnShow").on("click",function(){
+                
+            //     var myWindow =window.open("","myWindow","width=500,height=600");
+            //     var html = $("#frm").html();
+               
+            //    $(myWindow.document.body).html(html);
+ 
+               var win = window.open("","myWindow");
+               win.document.write('<html><head><title>Print it!</title><link rel="stylesheet" type="text/css" href="assignmentTest.css"></head><body>');
+               win.document.write($("#frm").parent().html());
+               win.document.write('</body></html>');
+               
+                
+
+});
+        });
+       
+    </script>
+</body>
+</html>
